@@ -59,7 +59,6 @@ export default function AppLayout({ children }: { children: ReactNode }) {
                   <DropdownMenuItem>
                     <Link href="/crear-oportunidad">Crear Oportunidad</Link>
                   </DropdownMenuItem>
-                  {/* Agrega más opciones según sea necesario */}
                 </DropdownMenuContent>
               </DropdownMenu>
               <Button variant="ghost" size="icon">
