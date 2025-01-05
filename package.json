@@ -13,7 +13,13 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:drop": "drizzle-kit drop",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "db:up": "drizzle-kit up"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.2",

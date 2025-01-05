@@ -20,6 +20,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { api } from "@/trpc/react";
 import { get } from "http";
 import { Delete, Plus } from "lucide-react";
 import { HTMLInputTypeAttribute, useEffect, useState } from "react";
@@ -34,6 +35,8 @@ import {
 const defaultValues = {};
 
 export default function Page() {
+  const { data } = api.post.getUsers.useQuery();
+  console.log("data", data);
   return (
     <div className="p-8">
       <h1 className="flex justify-end">
@@ -74,7 +77,6 @@ function CrearLeadForm() {
     },
   });
 
-
   const tipoDocumento = methods.watch("tipoDocumento");
 
   const onSelectTipoDocumento = (value: string | undefined) => {
@@ -96,12 +98,12 @@ function CrearLeadForm() {
   return (
     <FormProvider {...methods}>
       <form
-        className="px-8 py-4 flex flex-col gap-4"
+        className="flex flex-col gap-4 px-8 py-4"
         onSubmit={methods.handleSubmit(onSubmit)}
       >
         <h1 className="mb-2 font-bold">Datos contacto</h1>
         <Controller
-          render={({field: {onChange, ref,...field}, fieldState }) => (
+          render={({ field: { onChange, ref, ...field }, fieldState }) => (
             <Select onValueChange={onSelectTipoDocumento} {...field}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Selecione tipo de documento" />
