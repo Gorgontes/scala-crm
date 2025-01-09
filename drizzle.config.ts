@@ -8,5 +8,5 @@ export default {
   dbCredentials: {
     url: env.DATABASE_URL,
   },
-  tablesFilter: ["asistente-crm-mvp_*"],
+  // tablesFilter: ["asistente-crm-mvp_*"],
 } satisfies Config;
