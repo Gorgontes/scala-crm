@@ -11,7 +11,6 @@ export const crmFlujoOportunidad = pgTable(
   "crm_flujo_oportunidad",
   {
     crmOportunidadId: uuid("crm_oportunidad_id").primaryKey().defaultRandom(),
-    // crmEntidadClienteId: uuid("crm_entidad_cliente_id").notNull().references("crm_entidad_cliente", "crm_entidad_cliente_id").onDelete("cascade"),
     crmEntidadClienteId: uuid("crm_entidad_cliente_id").notNull().references(() => crmEntidadCliente.crmEntidadClienteId, {onDelete: 'cascade'}),
     oportunidadGananciaComision: decimal("oportunidad_ganancia_comision", { precision: 10, scale: 2 }),
     oportunidadGananciaCargoFijo: decimal("oportunidad_ganancia_cargo_fijo", { precision: 10, scale: 2 }),

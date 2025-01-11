@@ -61,8 +61,9 @@ export const crmWorkflowStatusTransition = pgTable(
 
 export const crmWorkflowBase = 
   {
-    workflowId: uuid("workflow_id").primaryKey().defaultRandom(),
-    currentStatusId: uuid("current_status_id").notNull().references(() => crmWorkflowStatus.workflowStatusId, {onDelete: 'no action'}).unique(),
+    // workflowId: uuid("workflow_id").primaryKey().defaultRandom(),
+    // v it had unique in the row below
+    currentStatusId: uuid("current_status_id").notNull().references(() => crmWorkflowStatus.workflowStatusId, {onDelete: 'no action'}),
     workflowStatusText: text("workflow_status_text"),
     workflowSubstatusText: text("workflow_substatus_text"),
     startDate: timestamp("start_date").defaultNow(),

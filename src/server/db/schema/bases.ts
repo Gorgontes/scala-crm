@@ -81,7 +81,7 @@ export const crmBasePersona = {
 };
 
 export const crmBaseLinea = {
-  crmBaseLineaId: uuid("crm_base_linea_id").defaultRandom().primaryKey(),
+  // crmBaseLineaId: uuid("crm_base_linea_id").defaultRandom().primaryKey(),
   lineaNumero: varchar("linea_numero", { length: 100 }),
   lineaOperador: varchar("linea_operador", { length: 50 }),
   lineaModalidad: varchar("linea_modalidad", { length: 50 }),
@@ -90,7 +90,7 @@ export const crmBaseLinea = {
 };
 
 export const crmBaseSec = {
-  crmBaseSecId: uuid("crm_base_sec_id").defaultRandom().primaryKey(),
+  // crmBaseSecId: uuid("crm_base_sec_id").defaultRandom().primaryKey(),
   secNumero: integer("sec_numero").default(0),
   secFechaIngreso: date("sec_fecha_ingreso").defaultNow(),
   secStatus: varchar("sec_status", { length: 50 }).default("Aprobado"),
