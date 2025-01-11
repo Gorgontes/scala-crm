@@ -12,7 +12,7 @@ import { crmFlujoOportunidad } from "./oportunidad";
 export const crmFlujoCotizacion = pgTable(
   "crm_flujo_cotizacion",
   {
-    crmFlujoCotizacionId: uuid("crm_flujo_cotizacion_id").primaryKey().defaultRandom(),
+    // crmFlujoCotizacionId: uuid("crm_flujo_cotizacion_id").primaryKey().defaultRandom(),
     // crmEntidadClienteId: uuid("crm_entidad_cliente_id").notNull().references("crm_entidad_cliente", "crm_entidad_cliente_id").onDelete("cascade"),
     crmEntidadClienteId: uuid("crm_entidad_cliente_id").notNull().references(() => crmEntidadCliente.crmEntidadClienteId, {onDelete: 'cascade'}),
     // crmOportunidadId: uuid("crm_oportunidad_id").notNull().references("crm_flujo_oportunidad", "crm_oportunidad_id"),

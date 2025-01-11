@@ -33,9 +33,6 @@ export const esalesTransaccionProductoStockPdv = pgTable(
   "esales_transaccion_producto_stock_pdv",
   {
     esalesTransaccionProductoStockPdvId: uuid("esales_transaccion_producto_stock_pdv_id").primaryKey().defaultRandom(),
-    // esalesEntidadProductoVarianteId: uuid("esales_entidad_producto_variante_id").notNull().references("esales_entidad_producto_variante", "esales_entidad_producto_variante_id").onDelete("cascade"),
-    // esalesEntidadPdvId: uuid("esales_entidad_pdv_id").notNull().references("esales_entidad_pdv", "esales_entidad_pdv_id").onDelete("cascade"),
-    // esalesEntidadProductoId: uuid("esales_entidad_producto_id").notNull().references("esales_entidad_producto", "esales_entidad_producto_id").onDelete("cascade"),
     esalesEntidadProductoVarianteId: uuid("esales_entidad_producto_variante_id").notNull().references(() => esalesEntidadProducto.esalesEntidadProductoId, {onDelete: 'no action'}),
     esalesEntidadPdvId: uuid("esales_entidad_pdv_id").notNull().references(() => esalesEntidadProducto.esalesEntidadProductoId, {onDelete: 'no action'}),
     esalesEntidadProductoId: uuid("esales_entidad_producto_id").notNull().references(() => esalesEntidadProducto.esalesEntidadProductoId, {onDelete: 'no action'}),
